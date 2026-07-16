@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ТС Контроль — сравнение спецификаций</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">ТС</span><span>Контроль<small>Экспертная проверка</small></span></a>
+      <nav>
+        <a class="active" href="#workspace"><span>▦</span> Рабочая область</a>
+        <a href="#checks"><span>◴</span> История проверок</a>
+        <a href="#rules"><span>⚖</span> Нормативная база</a>
+        <a href="#"><span>◌</span> Справка</a>
+      </nav>
+      <div class="profile"><div class="avatar">АИ</div><div><b>Айдана Ибраева</b><small>Эксперт</small></div><span>⌄</span></div>
+    </aside>
+    <main>
+      <header><div><p class="eyebrow">Рабочая область</p><h1>Проверка технических спецификаций</h1></div><button class="help">? <span>Как это работает</span></button></header>
+      <section class="intro"><div><span class="status-dot"></span> Предварительный экспертный контроль</div><p>Результаты носят рекомендательный характер и требуют оценки специалиста.</p></section>
+      <section class="mode-tabs" aria-label="Режим проверки">
+        <button class="mode active" data-mode="compare"><i>⇄</i><span>Сравнить документы<small>Сопоставление версий ТС</small></span></button>
+        <button class="mode" data-mode="competition"><i>◉</i><span>Ограничения конкуренции<small>Поиск потенциальных рисков</small></span></button>
+        <button class="mode" data-mode="rules"><i>✓</i><span>Соответствие Порядку<small>Проверка нормативных правил</small></span></button>
+      </section>
+      <section class="upload-card" id="workspace">
+        <div class="section-heading"><div><p class="eyebrow">Шаг 1 из 2</p><h2>Добавьте технические спецификации</h2></div><span class="formats">DOCX&nbsp;&nbsp; PDF&nbsp;&nbsp; XLSX</span></div>
+        <div class="uploads">
+          <label class="dropzone" id="drop1"><input type="file" accept=".pdf,.docx,.xlsx" /><span class="file-icon">⇧</span><b>Первая спецификация</b><small>Перетащите файл или <em>выберите с компьютера</em></small><output>ТС_насосное_оборудование_v1.docx</output></label>
+          <div class="versus">VS</div>
+          <label class="dropzone" id="drop2"><input type="file" accept=".pdf,.docx,.xlsx" /><span class="file-icon">⇧</span><b>Вторая спецификация</b><small>Перетащите файл или <em>выберите с компьютера</em></small><output>ТС_насосное_оборудование_v2.docx</output></label>
+        </div>
+        <div class="advanced"><button id="addFile">+ Добавить ещё документ</button><label><input type="checkbox" checked /> Проверить требования на потенциальное ограничение конкуренции</label></div>
+        <div class="run-row"><span>Документы обрабатываются локально в демонстрационном режиме</span><button class="primary" id="runCheck">Запустить проверку <span>→</span></button></div>
+      </section>
+      <section class="results hidden" id="results">
+        <div class="results-title"><div><p class="eyebrow">Результаты проверки · 16 июля 2026</p><h2>Насосное оборудование</h2><span class="docs">ТС_насосное_оборудование_v1.docx &nbsp; ↔ &nbsp; ТС_насосное_оборудование_v2.docx</span></div><div class="export"><button id="exportCsv">⇩ Excel / CSV</button><button id="printReport">▣ PDF</button></div></div>
+        <div class="metrics"><article class="risk"><small>Сводный риск</small><strong>Средний</strong><span>Требуется экспертная оценка</span></article><article><strong>8</strong><span>Совпадений</span></article><article class="changed"><strong>5</strong><span>Изменений</span></article><article class="warn"><strong>3</strong><span>Замечания</span></article><article class="critical"><strong>1</strong><span>Высокий риск</span></article></div>
+        <div class="toolbar"><div class="filters"><button class="filter active" data-filter="all">Все <b>16</b></button><button class="filter" data-filter="changed">Изменения <b>5</b></button><button class="filter" data-filter="warning">Замечания <b>3</b></button></div><label class="search">⌕ <input id="search" placeholder="Поиск по параметрам" /></label></div>
+        <div class="table-wrap"><table><thead><tr><th>Параметр</th><th>ТС 1</th><th>ТС 2</th><th>Результат</th><th>Риск</th><th>Комментарий</th></tr></thead><tbody id="comparisonRows"></tbody></table></div>
+        <div class="findings"><div class="section-heading"><div><p class="eyebrow">Требуют внимания</p><h2>Потенциальные замечания</h2></div><span class="counter">3 замечания</span></div><div id="findingCards"></div></div>
+      </section>
+      <section class="recent" id="checks"><div class="section-heading"><div><p class="eyebrow">История</p><h2>Последние проверки</h2></div><button>Все проверки →</button></div><div class="recent-list"><div><span class="check-icon">✓</span><p><b>Кабельная продукция</b><small>14 июля 2026 · 3 документа</small></p><span class="tag low">Низкий риск</span><button>Открыть</button></div><div><span class="check-icon">!</span><p><b>Услуги технического обслуживания</b><small>11 июля 2026 · 2 документа</small></p><span class="tag medium">Средний риск</span><button>Открыть</button></div></div></section>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
