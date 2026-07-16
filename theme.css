@@ -1,21 +1,21 @@
 :root {
-  --ink: #112b4b;
-  --muted: #62788f;
-  --line: #d8e5ef;
-  --teal: #0c6ea8;
-  --deep: #074f80;
-  --mint: #eaf6fd;
-  --cream: #f6faff;
+  --ink: #4c465e;
+  --muted: #817a91;
+  --line: #e7e0eb;
+  --teal: #9a82b3;
+  --deep: #77618f;
+  --mint: #f4eff8;
+  --cream: #fcf9fc;
 }
 
-nav a.active { background: #eaf6fd; }
-.intro { background: #eaf6fd; border-left-color: #3a93c5; color: #175d89; }
-.status-dot { background: #1686bf; }
-.mode-tabs { background: #e8f0f6; }
+nav a.active { background: #f1e9f6; }
+.intro { background: #f6edf4; border-left-color: #c39ab6; color: #7f5f76; }
+.status-dot { background: #b78bab; }
+.mode-tabs { background: #f2eef4; }
 .mode.secondary { opacity: .72; }
-.dropzone { border-color: #a7cce2; background: #fbfdff; }
-.dropzone:hover { background: #eef8fe; }
+.dropzone { border-color: #d5bedb; background: #fffaff; }
+.dropzone:hover { background: #f7eff8; }
 .single-upload .dropzone { max-width: 100%; }
-.filter.active { border-color: #9ec9e1; background: #edf8fe; }
-.finding .recommendation { color: #12618e; }
-.avatar { background: #dff1fb; color: #145e8b; }
+.filter.active { border-color: #c9afd5; background: #f7eff9; }
+.finding .recommendation { color: #80628e; }
+.avatar { background: #eee2f1; color: #7f638d; }
