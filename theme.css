@@ -1,20 +1,21 @@
 :root {
-  --ink: #1f2545;
-  --muted: #737b96;
-  --line: #e1e4f0;
-  --teal: #4c51bf;
-  --deep: #30358e;
-  --mint: #eef0ff;
-  --cream: #f7f8fc;
+  --ink: #112b4b;
+  --muted: #62788f;
+  --line: #d8e5ef;
+  --teal: #0c6ea8;
+  --deep: #074f80;
+  --mint: #eaf6fd;
+  --cream: #f6faff;
 }
 
-nav a.active { background: #eef0ff; }
-.intro { background: #eef0ff; border-left-color: #6870d8; color: #3e458d; }
-.status-dot { background: #5961ca; }
-.mode-tabs { background: #eceef7; }
+nav a.active { background: #eaf6fd; }
+.intro { background: #eaf6fd; border-left-color: #3a93c5; color: #175d89; }
+.status-dot { background: #1686bf; }
+.mode-tabs { background: #e8f0f6; }
 .mode.secondary { opacity: .72; }
-.dropzone { border-color: #aeb5e5; background: #fbfbff; }
-.dropzone:hover { background: #f2f3ff; }
-.filter.active { border-color: #a8ade4; background: #f1f2ff; }
-.finding .recommendation { color: #3f469b; }
-.avatar { background: #e2e5ff; color: #3e459f; }
+.dropzone { border-color: #a7cce2; background: #fbfdff; }
+.dropzone:hover { background: #eef8fe; }
+.single-upload .dropzone { max-width: 100%; }
+.filter.active { border-color: #9ec9e1; background: #edf8fe; }
+.finding .recommendation { color: #12618e; }
+.avatar { background: #dff1fb; color: #145e8b; }
