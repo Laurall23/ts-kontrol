@@ -28,23 +28,20 @@
       <section class="mode-tabs" aria-label="Режим проверки">
         <button class="mode active" data-mode="rules"><i>✓</i><span>Проверить соответствие Порядку<small>Нормативный контроль требований</small></span></button>
         <button class="mode" data-mode="competition"><i>◉</i><span>Ограничения конкуренции<small>Поиск потенциальных рисков</small></span></button>
-        <button class="mode secondary" data-mode="compare"><i>⇄</i><span>Сравнить версии ТС<small>Дополнительная функция</small></span></button>
       </section>
       <section class="upload-card" id="workspace">
         <div class="section-heading"><div><p class="eyebrow">Шаг 1 из 2</p><h2>Добавьте техническую спецификацию</h2></div><span class="formats">DOCX&nbsp;&nbsp; PDF&nbsp;&nbsp; XLSX</span></div>
-        <div class="uploads">
+        <div class="uploads single-upload">
           <label class="dropzone" id="drop1"><input type="file" accept=".pdf,.docx,.xlsx" /><span class="file-icon">⇧</span><b>Техническая спецификация</b><small>Перетащите файл или <em>выберите с компьютера</em></small><output>ТС_насосное_оборудование.docx</output></label>
-          <div class="versus">VS</div>
-          <label class="dropzone" id="drop2"><input type="file" accept=".pdf,.docx,.xlsx" /><span class="file-icon">⇧</span><b>Приложение или версия ТС</b><small>Необязательно: для дополнительного сравнения</small><output>Добавьте при необходимости</output></label>
         </div>
-        <div class="advanced"><button id="addFile">+ Добавить документ для сравнения</button><label><input type="checkbox" checked /> Проверить ограничения конкуренции одновременно с нормативной проверкой</label></div>
+        <div class="advanced"><span>Поддерживаются документы DOCX, PDF и XLSX</span><label><input type="checkbox" checked /> Проверить ограничения конкуренции одновременно с нормативной проверкой</label></div>
         <div class="run-row"><span>Проверка использует настраиваемую нормативную базу и правила выявления рисков</span><button class="primary" id="runCheck">Проверить ТС <span>→</span></button></div>
       </section>
       <section class="results hidden" id="results">
         <div class="results-title"><div><p class="eyebrow">Результаты проверки · 16 июля 2026</p><h2>Насосное оборудование</h2><span class="docs">ТС_насосное_оборудование.docx · Проверка по Порядку и ограничению конкуренции</span></div><div class="export"><button id="exportCsv">⇩ Excel / CSV</button><button id="printReport">▣ PDF</button></div></div>
         <div class="metrics"><article class="risk"><small>Сводный риск</small><strong>Средний</strong><span>Требуется экспертная оценка</span></article><article><strong>12</strong><span>Проверено правил</span></article><article class="changed"><strong>2</strong><span>Требуют уточнения</span></article><article class="warn"><strong>3</strong><span>Замечания</span></article><article class="critical"><strong>1</strong><span>Высокий риск</span></article></div>
         <div class="toolbar"><div class="filters"><button class="filter active" data-filter="all">Все правила <b>12</b></button><button class="filter" data-filter="changed">Требует оценки <b>2</b></button><button class="filter" data-filter="warning">Замечания <b>3</b></button></div><label class="search">⌕ <input id="search" placeholder="Поиск по требованиям" /></label></div>
-        <div class="table-wrap"><table><thead><tr><th>Параметр</th><th>ТС 1</th><th>ТС 2</th><th>Результат</th><th>Риск</th><th>Комментарий</th></tr></thead><tbody id="comparisonRows"></tbody></table></div>
+        <div class="table-wrap"><table><thead><tr><th>Проверяемое требование</th><th>Значение в ТС</th><th>Правило проверки</th><th>Результат</th><th>Риск</th><th>Рекомендация</th></tr></thead><tbody id="comparisonRows"></tbody></table></div>
         <div class="findings"><div class="section-heading"><div><p class="eyebrow">Требуют внимания</p><h2>Замечания по Порядку и конкуренции</h2></div><span class="counter">3 замечания</span></div><div id="findingCards"></div></div>
       </section>
       <section class="recent" id="checks"><div class="section-heading"><div><p class="eyebrow">История</p><h2>Последние проверки</h2></div><button>Все проверки →</button></div><div class="recent-list"><div><span class="check-icon">✓</span><p><b>Кабельная продукция</b><small>14 июля 2026 · 3 документа</small></p><span class="tag low">Низкий риск</span><button>Открыть</button></div><div><span class="check-icon">!</span><p><b>Услуги технического обслуживания</b><small>11 июля 2026 · 2 документа</small></p><span class="tag medium">Средний риск</span><button>Открыть</button></div></div></section>
